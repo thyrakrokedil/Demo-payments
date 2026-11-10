@@ -17,6 +17,7 @@ Varje utfall hanteras separat (godkänt, nekat, väntande, HTTP-fel, timeout och
 
 ## Hur man sätter upp mock-endpointen
 Mock-endpointen finns i filerna mock-payment.php och mock-redirect.php
+
 **Inline: `mock-payment.php`.** Svaret styrs av parametern `scenario`.
 Tillgängliga scenarier: `approved`, `declined`, `pending`, `error500`, `error400`, `badjson` (200 med trasig JSON) och `timeout` (svarar efter 20 s, längre än gatewayens timeout på 15 s).
 
