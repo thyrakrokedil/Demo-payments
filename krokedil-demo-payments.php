@@ -148,7 +148,6 @@ function kdp_init()
             // MANUELLT: inget API-anrop. Ordern väntar på att någon bekräftar betalningen i efterhand.
             if ($mode === 'manual') {
                 $order->update_status('on-hold', 'Väntar på manuell betalning.');
-                WC()->cart->empty_cart();
                 return array('result' => 'success', 'redirect' => $this->get_return_url($order));
             }
 
