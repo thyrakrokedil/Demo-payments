@@ -1,0 +1,13 @@
+.git
+.gitignore
+vendor
+data
+tests
+.phpunit.cache
+.phpstan.cache
+.php-cs-fixer.cache
+.env
+PLAN.md
+README.md
+docker-compose.yml
+Dockerfile
