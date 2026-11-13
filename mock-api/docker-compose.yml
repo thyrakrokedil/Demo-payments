@@ -1,0 +1,19 @@
+services:
+  mockpay:
+    build: .
+    container_name: mockpay
+    ports:
+      - "8888:8888"
+    environment:
+      AUTH_USERNAME: ${AUTH_USERNAME:-username}
+      AUTH_PASSWORD: ${AUTH_PASSWORD:-password}
+      APP_DEBUG: ${APP_DEBUG:-false}
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+      PUBLIC_URL: ${PUBLIC_URL:-http://localhost:8888}
+      CALLBACK_TIMEOUT_SECONDS: ${CALLBACK_TIMEOUT_SECONDS:-5}
+      DB_PATH: /var/data/mockpay.sqlite
+      DB_MIGRATE_ON_BOOT: "true"
+      PHP_CLI_SERVER_WORKERS: ${PHP_CLI_SERVER_WORKERS:-4}
+    volumes:
+      - ./data:/var/data
+    restart: unless-stopped
